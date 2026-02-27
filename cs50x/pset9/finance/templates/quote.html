@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol Ex: AAPL" type="text" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+    {% if data %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Symbol</th>
+                            <th class="text-end">Name</th>
+                            <th class="text-end">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td class="text-start">{{ data.symbol }}</td>
+                                <td class="text-end">{{ data.name }}</td>
+                                <td class="text-end">{{ data.price }}</td>
+                            </tr>
+                    </tbody>
+                </table>
+    {% endif %}
+{% endblock %}

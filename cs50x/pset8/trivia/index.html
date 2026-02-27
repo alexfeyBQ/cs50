@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function()
+            {
+                // Check Multiple Choice Answer
+                document.querySelectorAll('.true, .false').forEach(button =>
+                {
+                    button.addEventListener('click', function()
+                    {
+                        if (this.classList.contains('true'))
+                        {
+                            this.style.backgroundColor = 'Green';
+                            this.parentElement.querySelector('.comment').innerHTML = 'Yes, that is the correct answer!';
+                        }
+                        else
+                        {
+                            this.style.backgroundColor = 'Red';
+                            this.parentElement.querySelector('.comment').innerHTML = 'No, that is incorrect. Hint: field of mathematics.';
+                        }
+                    });
+                });
+
+                // Check Free Response Answer
+                document.querySelector('#answer').addEventListener('click', function()
+                {
+                    let answer = document.querySelector('input');
+                    if (Number(answer.value) === 38)
+                    {
+                        answer.style.backgroundColor = 'Green';
+                        answer.parentElement.querySelector('.comment').innerHTML = 'Yes, that is the correct answer!';
+                    }
+                    else
+                    {
+                        answer.style.backgroundColor = 'Red';
+                        answer.parentElement.querySelector('.comment').innerHTML = 'No, that is incorrect. Hint: Think about subsets.';
+                    }
+                });
+
+                // Provide Solution For Free Response Answer
+                document.querySelector('#solution').addEventListener('click', function()
+                {
+                    let comment = this.parentElement.querySelector('.solution_comment');
+                    comment.innerHTML = 'Consider which elements are in A. Remove elements excluded by the condition 3x-4 ≤ 5. Take intersection with {2,3,5,7,11,12,13,17,19,21}. Sum all remaining elements to get the final answer: 38.';
+                });
+            });
+
+        </script>
+
+        <script id="MathJax-script" async
+                src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What does "CQFD" stand for in french?</h3>
+                <button class="false">Certificat de Qualité de Fonction</button>
+                <button class="true">Ce Qu’il Fallait Démontrer</button>
+                <button class="false">Commande Qui Fait Déjà</button>
+                <button class="false">Calcul Quantique Fondamental Direct</button>
+                <p class="comment"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    <p>Let
+                        \(
+                        A = \Big( \{ x \in \mathbb{N} : x \le 5 \} \cup \{ 8, 12, 15, 21, 101 \} \setminus \{ x \in \mathbb{Z} : 3x - 4 \le 5 \} \Big) \cap \{ 2, 3, 5, 7, 11, 12, 13, 17, 19, 21 \}
+                        \)
+                    </p>
+                    Find the sum: \(\displaystyle \sum_{a \in A} a\)
+                </h3>
+                <input type='number'>
+                <button id="answer">Check Answer</button>
+                <button id="solution">?</button>
+                <p class="comment"></p>
+                <p class="solution_comment"></p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+    {% block main %}
+        <form action="/" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="add_cash" placeholder="min: $5" type="number" min="0" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Add cash</button>
+        </form>
+
+        <table class="table table-striped">
+            <thead>
+                    <tr>
+                        <th class="text-start">Symbol</th>
+                        <th class="text-end">Shares</th>
+                        <th class="text-end">Price</th>
+                        <th class="text-end">TOTAL</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for row in portfolio %}
+                    <tr>
+                        <td class="text-start">{{ row.symbol }}</td>
+                        <td class="text-end">{{ row.shares }}</td>
+                        <td class="text-end">{{ row.price }}</td>
+                        <td class="text-end">{{ row.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">Cash</td>
+                    <td class="border-0 text-end">{{ cash }}</td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="3">TOTAL</td>
+                    <td class="border-0 fw-bold text-end">{{ total }}</td>
+                </tr>
+            </tfoot>
+        </table>
+{% endblock %}

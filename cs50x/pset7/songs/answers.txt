@@ -1,0 +1,23 @@
+Let's suppose that Spotify determines an audio aura by looking at
+the average energy, valence, and danceability of a person’s
+top 100 songs from the past year.
+
+SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs;
++-------------+--------------+-------------------+
+| AVG(energy) | AVG(valence) | AVG(danceability) |
++-------------+--------------+-------------------+
+| 0.65906     | 0.484443     | 0.71646           |
++-------------+--------------+-------------------+
+
+If songs.db contains the top 100 songs of one listener from 2018, I would characterize their audio aura as
+moderately energetic, neutral in mood, and fairly danceable. This suggests that the listener tends to favor
+songs that are upbeat and suitable for movement, but with a relatively balanced emotional tone.
+
+However, this calculation might not be fully representative of the listener.
+Using a simple average ignores the fact that some songs may have been played far more frequently than others,
+which could skew the perception of the listener’s preferences. It also does not account for changes in taste over time,
+or for context such as listening during different times of day or for different activities.
+
+A better way to calculate the audio aura could be to weight the songs by their number of plays,
+to consider temporal patterns in listening habits, and to include additional musical features such as tempo, key, or acousticness.
+This would create a more nuanced and accurate representation of the listener’s musical personality.

@@ -1,0 +1,52 @@
+.header
+{
+    background-color: #000000;
+    color: #fff;
+    margin-bottom: 4rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.header .nav-link {
+    font-weight: 500;
+    color: #0d6efd; /* White */
+    text-decoration: none;
+}
+
+.header .nav-link:hover {
+    font-weight: 500;
+    color: #ffffff; /* Blue */
+    text-decoration: none;
+}
+
+.section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.logo
+{
+    width: auto;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.illustration
+{
+    width: 450px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.cheer
+{
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 16px; 
+}
+

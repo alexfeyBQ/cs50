@@ -1,0 +1,40 @@
+HTML Tags I used:
+<h1> - Title
+<h2> - Sections subtitles
+<h6> - Sub-subtitles such as "Dream school"
+<p> - Make paragraph for readability and style
+<a> - Link for my other page, and social media
+<div> - Container for my sections, headers
+<ul> - Create the list of my goals and dream schools
+<li> - Elements inside <ul>
+<img> - Logos and illustrations
+<button> - "Cheers!" button and informations
+<strong> - Highlight important terms
+
+CSS Selectors I used:
+.header
+.header .nav-link
+.header .nav-link:hover
+.section
+.logo
+.illustration
+.cheer
+
+CSS Properties I used:
+background-color – For headers and buttons colors
+color – Text colors
+border / border-radius – Remove default borders and make buttons rounded
+padding – Spacing inside headers, buttons, and sections
+margin – Spacing around sections, images, and logos
+width / height – Resize images and illustrations
+display – Layout control for images and logos
+text-align – Center text in header
+font-weight – Boldness for navigation links
+text-decoration – Remove underline from links
+
+I used bootstrap for layout, collapsing components (info cards) and the buttons as well.
+I also made a JavaScript script in "hobbies.html" to make a "Cheers!" button that displays
+a simple message.
+
+PS: I'm sorry if I eventually forget to mention something :(
+
