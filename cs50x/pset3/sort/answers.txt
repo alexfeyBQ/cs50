@@ -1,0 +1,26 @@
+sort1 uses: Bubble sort
+
+How do you know?: time ./sort1 random5000.txt : 0.049s
+                  time ./sort1 sorted5000.txt : 0.017s
+                  time ./sort1 random50000.txt : 6.579s
+                  time ./sort1 sorted50000.txt : 0.309s
+                  Runtime grows quickly from 5000 to 50000 (n²)
+                  When the array is sorted, the algorithm is much faster than on random input (n) -> Bubble sort
+
+sort2 uses: Merge sort
+
+How do you know?: time ./sort2 random5000.txt : 0.028s
+                  time ./sort2 sorted5000.txt : 0.015s
+                  time ./sort2 random50000.txt : 0.329s
+                  time ./sort2 sorted50000.txt : 0.353s
+                  Runtime grows slowly from 5000 to 50000 (n log n)
+                  Runtime for random input is almost identical to runtime for sorted input -> Merge sort
+
+sort3 uses: Selection sort
+
+How do you know?: time ./sort3 random5000.txt : 0.043s
+                  time ./sort3 sorted5000.txt : 0.035s
+                  time ./sort3 random50000.txt : 2.811s
+                  time ./sort3 sorted50000.txt : 2.614s
+                  Runtime grows quickly from 5000 to 50000 (n²)
+                  Runtime for random input is almost identical to runtime for sorted input -> Selection sort
